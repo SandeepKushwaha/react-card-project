@@ -1,0 +1,41 @@
+header {
+    background: #1e56bd;
+    padding: 0px 20px;
+    color: #FFF;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 1px 3px 1px #222;
+}
+
+.App-Title {
+    text-transform: uppercase;
+}
+
+.App-Title span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* nav { } */
+
+nav ul {
+    list-style: none;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding-inline-start: 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+}

@@ -1,0 +1,30 @@
+.card-item {
+    display: inline-flex;
+    margin: 20px 10px;
+    padding: 10px 16px;
+    box-shadow: 0px 0px 3px 1px #222;
+    border-radius: 4px;
+}
+
+.card-item:hover {
+    box-shadow: 0px 0px 4px 1px #222;
+}
+
+.card-item .right-block {
+    padding: 0px 20px;
+}
+
+.card-item-action {
+    margin-top: 10px;
+}
+
+.action-icons {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.action-icons:hover {
+    cursor: pointer;
+}
+
