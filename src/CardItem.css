@@ -7,7 +7,7 @@
 }
 
 .card-item:hover {
-    box-shadow: 0px 0px 4px 1px #222;
+    box-shadow: 0px 0px 6px 1px #222;
 }
 
 .card-item .right-block {
@@ -22,6 +22,7 @@
     height: 25px;
     width: 25px;
     margin-right: 10px;
+    margin-top: 10px;
 }
 
 .action-icons:hover {

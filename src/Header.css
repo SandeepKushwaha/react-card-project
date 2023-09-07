@@ -29,6 +29,8 @@ nav ul {
     padding-inline-start: 0px;
     align-items: center;
     justify-content: center;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
 }
 
 nav ul li {
@@ -38,4 +40,5 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #FFF;
+    padding: 12px;
 }
