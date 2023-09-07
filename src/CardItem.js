@@ -15,10 +15,43 @@ class CardItem extends React.Component {
         // this.increaseQuantity = this.increaseQuantity.bind(this);
     }
 
+    decreaseQuantity = () => {
+        const { quantity } = this.state;
+        this.setState((prevState) => {
+            if (quantity === 1) {
+                return;
+            }
+
+            return {
+                quantity: prevState.quantity - 1,
+            };
+        }, () => {
+            if (quantity === 1)
+                console.log('minimum product count:', this.state.quantity);
+            else
+                console.log('this.state:', this.state);
+        });
+    }
+
     increaseQuantity = () => {
-        console.log('increase: called!');
-        console.log('This Object:', this);
-        console.log('This Object State:', this.state);
+        // console.log('increase: called!');
+        // console.log('This Object:', this);
+        // console.log('This Object State:', this.state);
+
+        // this.state.quantity += 1;
+        // console.log('This Object:', this.state);
+        
+        // setState form 1. 
+        // this.setState({ quantity: this.state.quantity+1 }, () => { /* call back */});
+        
+        // setState form 2. [If prevState required use this]
+        this.setState((prevState) => { 
+            return {
+                quantity: prevState.quantity + 1,
+            };
+        }, () => {
+            console.log('this.state:', this.state);
+        });
     }
 
     render() {
@@ -44,6 +77,7 @@ class CardItem extends React.Component {
                             alt="decrease"
                             className="action-icons"
                             src="https://cdn-icons-png.flaticon.com/512/2040/2040522.png"
+                            onClick={ this.decreaseQuantity }
                         />
                         <img
                             alt="delete"
