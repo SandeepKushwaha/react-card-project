@@ -13,7 +13,27 @@ class CardItem extends React.Component {
             image: '',
         };
         // this.increaseQuantity = this.increaseQuantity.bind(this);
+        // this.testing();
     }
+
+    // testing() {
+    //     const promise = new Promise((resolve, reject) => { 
+    //         setTimeout(() => {
+    //             resolve('done');
+    //         }, 5000);
+    //     });
+
+    //     promise.then(() => {
+    //         // setState acts like a synchronus call
+    //         // this.setState({ quantity: 100 });
+
+    //         this.setState({ quantity: this.state.quantity + 10 });
+    //         this.setState({ quantity: this.state.quantity + 10 });
+    //         this.setState({ quantity: this.state.quantity + 10 });
+
+    //         console.log('state', this.state);
+    //     });
+    // }
 
     decreaseQuantity = () => {
         const { quantity } = this.state;
