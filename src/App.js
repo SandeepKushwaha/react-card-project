@@ -1,5 +1,5 @@
 import './App.css';
-import CardItem from './CardItem';
+import Cart from './Cart';
 import Header from './Header';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <Header />
       <div className='Container'>
-        <CardItem />
+        <Cart />
       </div>
     </div>
   );

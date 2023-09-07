@@ -1,8 +1,8 @@
 import React from "react";
-import './CardItem.css';
+import './CartItem.css';
 
 // class based component
-class CardItem extends React.Component {
+class CartItem extends React.Component {
 
     constructor() { 
         super();
@@ -126,4 +126,4 @@ const styles = {
     },
 };
 
-export default CardItem;
+export default CartItem;
