@@ -4,6 +4,7 @@ import './CartItem.css';
 // class based component
 class CartItem extends React.Component {
 
+    /*
     constructor() { 
         super();
         this.state = {
@@ -15,6 +16,7 @@ class CartItem extends React.Component {
         // this.increaseQuantity = this.increaseQuantity.bind(this);
         // this.testing();
     }
+    */
 
     // testing() {
     //     const promise = new Promise((resolve, reject) => { 
@@ -75,7 +77,8 @@ class CartItem extends React.Component {
     }
 
     render() {
-        const { title, price, quantity, image } = this.state;
+        console.log('this.props::', this.props);
+        const { title, price, quantity, image } = this.props.product;
         return (
             <div className="card-item">
                 <div className="left-block">
