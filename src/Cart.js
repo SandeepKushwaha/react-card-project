@@ -40,6 +40,36 @@ class Cart extends React.Component {
         };
     }
 
+    handleIncreaseQuantity = (product) => {
+        console.log('Hay Please increase the quantity of ', product);
+        const { products } = this.state;
+        const index = products.indexOf(product);
+
+        products[index].quantity += 1;
+        
+        this.setState({
+            // products: products
+            products
+        });
+    }
+
+    handleDecreaseQuantity = (product) => {
+        console.log('Hay Please decrease the quantity of ', product);
+        const { products } = this.state;
+        const index = products.indexOf(product);
+
+        if (products[index].quantity > 1) {
+            products[index].quantity -= 1;
+        } else {
+            console.log(`Cart Item of current item: '${product.title}' can not be less then 1`);
+        }
+        
+        this.setState({
+            // products: products
+            products
+        });
+    }
+
     render() {
         const { products } = this.state;
         return (
@@ -58,6 +88,8 @@ class Cart extends React.Component {
                             <CartItem
                                 product={product}
                                 key={product.id}
+                                onIncreaseQuantity={ this.handleIncreaseQuantity }
+                                onDecreaseQuantity={ this.handleDecreaseQuantity }
                             />
                         );
                     }) }
