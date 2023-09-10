@@ -37,48 +37,49 @@ class CartItem extends React.Component {
     //     });
     // }
 
-    decreaseQuantity = () => {
-        const { quantity } = this.state;
-        this.setState((prevState) => {
-            if (quantity === 1) {
-                return;
-            }
+    // decreaseQuantity = () => {
+    //     const { quantity } = this.state;
+    //     this.setState((prevState) => {
+    //         if (quantity === 1) {
+    //             return;
+    //         }
 
-            return {
-                quantity: prevState.quantity - 1,
-            };
-        }, () => {
-            if (quantity === 1)
-                console.log('minimum product count:', this.state.quantity);
-            else
-                console.log('this.state:', this.state);
-        });
-    }
+    //         return {
+    //             quantity: prevState.quantity - 1,
+    //         };
+    //     }, () => {
+    //         if (quantity === 1)
+    //             console.log('minimum product count:', this.state.quantity);
+    //         else
+    //             console.log('this.state:', this.state);
+    //     });
+    // }
 
-    increaseQuantity = () => {
-        // console.log('increase: called!');
-        // console.log('This Object:', this);
-        // console.log('This Object State:', this.state);
+    // increaseQuantity = () => {
+    //     // console.log('increase: called!');
+    //     // console.log('This Object:', this);
+    //     // console.log('This Object State:', this.state);
 
-        // this.state.quantity += 1;
-        // console.log('This Object:', this.state);
+    //     // this.state.quantity += 1;
+    //     // console.log('This Object:', this.state);
         
-        // setState form 1. 
-        // this.setState({ quantity: this.state.quantity+1 }, () => { /* call back */});
+    //     // setState form 1. 
+    //     // this.setState({ quantity: this.state.quantity+1 }, () => { /* call back */});
         
-        // setState form 2. [If prevState required use this]
-        this.setState((prevState) => { 
-            return {
-                quantity: prevState.quantity + 1,
-            };
-        }, () => {
-            console.log('this.state:', this.state);
-        });
-    }
+    //     // setState form 2. [If prevState required use this]
+    //     this.setState((prevState) => { 
+    //         return {
+    //             quantity: prevState.quantity + 1,
+    //         };
+    //     }, () => {
+    //         console.log('this.state:', this.state);
+    //     });
+    // }
 
     render() {
         console.log('this.props::', this.props);
         const { title, price, quantity, image } = this.props.product;
+        const { product, onIncreaseQuantity, onDecreaseQuantity, onDeleteProduct } = this.props;
         return (
             <div className="card-item">
                 <div className="left-block">
@@ -94,18 +95,19 @@ class CartItem extends React.Component {
                             alt="increase"
                             className="action-icons"
                             src="https://cdn-icons-png.flaticon.com/512/3161/3161837.png"
-                            onClick={ () => this.props.onIncreaseQuantity(this.props.product) }
+                            onClick={ () => onIncreaseQuantity(product) }
                         />
                         <img
                             alt="decrease"
                             className="action-icons"
                             src="https://cdn-icons-png.flaticon.com/512/2040/2040522.png"
-                            onClick={ () => this.props.onDecreaseQuantity(this.props.product) }
+                            onClick={ () => onDecreaseQuantity(product) }
                         />
                         <img
                             alt="delete"
                             className="action-icons"
                             src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png"
+                            onClick={ () => onDeleteProduct(product.id) }
                         />
                     </div>
                 </div>
