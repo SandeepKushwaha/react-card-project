@@ -13,28 +13,28 @@ class App extends React.Component {
           title: 'Smart Phone',
           price: 12999,
           quantity: 1,
-          image: '',
+          image: 'https://5.imimg.com/data5/SELLER/Default/2022/4/RR/VF/HU/149926717/new-factory-price-7-3inch-reolme7-pro-plus-smartphone-4g-5g-unlock-android-mobile-8gb-256gb-original.jpg',
         },
         {
           id: 2,
           title: 'Smart Watch',
           price: 4999,
           quantity: 2,
-          image: '',
+          image: 'https://m.media-amazon.com/images/I/712+lS1mk-L.jpg',
         },
         {
           id: 3,
           title: 'Washing Machine',
           price: 22999,
           quantity: 3,
-          image: '',
+          image: 'https://www.voltasbeko.com/media/catalog/product/w/t/wtt90agrt3.jpg',
         },
         {
           id: 4,
           title: 'Dish Washer',
           price: 31999,
           quantity: 2,
-          image: '',
+          image: 'https://www.shopz.com.bd/wp-content/uploads/2023/01/Miyako-Dish-Washer-MDW60CM14ST.jpg',
         },
       ],
     };
@@ -92,6 +92,21 @@ class App extends React.Component {
     return count;
   }
 
+  getCartTotal = () => {
+    const { products } = this.state;
+
+    // let total = 0;
+    // products.map((product) => {
+    //   total = total + (product.price * product.quantity);
+    // });
+  
+    const total = products.reduce((accumulator, product) => {
+      return accumulator + (product.price * product.quantity);
+    }, 0);
+  
+    return total;
+  }
+
   render() {
     const { products } = this.state;
     return (
@@ -106,6 +121,9 @@ class App extends React.Component {
             onDecreaseQuantity = {this.handleDecreaseQuantity}
             onDeleteProduct = { this.handleDeleteProduct }
           />
+        </div>
+        <div className='Cart-Total'>
+          <p>Total: <span className='Payable-Amount'>Rs. { this.getCartTotal() }</span></p>
         </div>
       </div>
     );
