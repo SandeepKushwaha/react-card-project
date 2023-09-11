@@ -42,3 +42,19 @@ nav ul li a {
     color: #FFF;
     padding: 12px;
 }
+
+nav ul li div .cart-img {
+    width: 28px;
+    height: 28px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(265deg) brightness(106%) contrast(103%);
+}
+
+nav ul li div .cart-item-count {
+    background: yellow;
+    color: black;
+    padding: 2px 8px;
+    border-radius: 11px;
+    font-size: 0.8rem !important;
+    position: absolute;
+    top: 8px;
+}
